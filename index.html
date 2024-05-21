@@ -3,157 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download APK</title>
+    <title>APK Download</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background: #f5f5f5;
-            background-image: url('https://www.gstatic.com/android/market_images/web/play_prism_halo/page_background_gradient.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        .app-header {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
+        .logo {
+            width: 100px;
             margin-bottom: 20px;
         }
-        .app-logo {
-            width: 100px;
-            height: 100px;
-            margin-right: 20px;
-            border-radius: 20px;
-            background-color: #ddd;
-        }
-        .app-details {
-            flex: 1;
-        }
-        .app-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0;
-        }
-        .app-subtitle {
-            color: #666;
-            margin-top: 5px;
-        }
-        .download-button {
-            display: inline-block;
-            padding: 10px 20px;
+        .download-btn {
             background-color: #4CAF50;
             color: white;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-        }
-        .download-button:hover {
-            background-color: #45a049;
-        }
-        .screenshots {
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        .screenshots-inner {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .screenshot {
-            flex: 0 0 auto;
-            margin-right: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            margin-top: 20px;
+            display: inline-block;
         }
         .reviews {
-            margin-top: 40px;
-        }
-        .reviews h3 {
-            margin: 0 0 20px 0;
+            margin-top: 30px;
+            text-align: left;
         }
         .review {
             border-bottom: 1px solid #ddd;
             padding: 10px 0;
         }
-        .review-author {
-            font-weight: bold;
-            color: #333;
+        .review:last-child {
+            border-bottom: none;
         }
-        .review-text {
-            margin-top: 5px;
-            color: #555;
+        .review strong {
+            display: block;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <div class="app-header">
-            <img src="app_icon.png" alt="App Logo" class="app-logo">
-            <div class="app-details">
-                <div class="app-title">Analyser Max</div>
-                <div class="app-subtitle"></div>
-                <a href="Analyser Max_2.0 (1).apk" class="download-button" download>Download APK</a>
-            </div>
-        </div>
-
-        <div class="screenshots">
-            <div class="screenshots-inner">
-                <img src="screenshot1.png" alt="Screenshot 1" class="screenshot">
-                <img src="screenshot2.png" alt="Screenshot 2" class="screenshot">
-                <img src="screenshot3.png" alt="Screenshot 3" class="screenshot">
-            </div>
-        </div>
-
+        <img src="app_icon.png" alt="APK Logo" class="logo">
+        <a href="Analyser Max_2.0 (1).apk" class="download-btn">Download APK</a>
         <div class="reviews">
-            <h3>Reviews</h3>
+            <h2>Reviews</h2>
             <div class="review">
-                <div class="review-author">John Doe</div>
-                <div class="review-text">This app is amazing! It has completely changed my life.</div>
+                <strong>John Doe</strong>
+                <p>Amazing app! Highly recommend.</p>
             </div>
             <div class="review">
-                <div class="review-author">Jane Smith</div>
-                <div class="review-text">A must-have app for everyone. Highly recommended!</div>
+                <strong>Jane Smith</strong>
+                <p>Great experience, works flawlessly.</p>
             </div>
             <div class="review">
-                <div class="review-author">Robert Brown</div>
-                <div class="review-text">Fantastic app with great features. Easy to use and very helpful.</div>
-            </div>
-            <div class="review">
-                <div class="review-author">Emily Johnson</div>
-                <div class="review-text">I love this app! It's the best one I've downloaded in a while.</div>
+                <strong>Bob Johnson</strong>
+                <p>Best APK I've downloaded this year.</p>
             </div>
         </div>
     </div>
-
-    <script>
-        const screenshotsInner = document.querySelector('.screenshots-inner');
-        const screenshots = document.querySelectorAll('.screenshot');
-        let counter = 0;
-        const width = screenshots[0].clientWidth;
-
-        document.querySelector('.container').addEventListener('click', function(event) {
-            if (event.target.matches('.screenshots-inner')) {
-                counter++;
-                screenshotsInner.style.transform = `translateX(-${width * counter}px)`;
-
-                if (counter === screenshots.length - 1) {
-                    screenshotsInner.style.transition = 'transform 0.5s ease-in-out';
-                }
-            }
-        });
-    </script>
-
 </body>
 </html>
